@@ -89,10 +89,6 @@
           <div
             class="w-64 h-64 rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 flex items-center justify-center shadow-lg relative"
           >
-            <!-- <button
-              id="heart-btn"
-              class="absolute -bottom-6 rotate-12 bg-white/90 p-4 rounded-full shadow-lg hover:scale-110 transition"
-            ></button> -->
             <img
               id="main-photo"
               src="./1.jpg"
@@ -103,14 +99,14 @@
         </div>
         <div>
           <p id="typed" class="text-lg sm:text-xl leading-relaxed">
-            Happy Birthday -- Selamat Ulang Tahun, Sayang! 🎉🎉🎉 .... Klik
-            "Lihat Pesan" - aku punya pesan untukmu ✨
+            Happy Birthday -- Selamat Ulang Tahun ke-26, Sayang! 🎉🎉🎉 ....
+            Klik "Lihat Pesan" - aku punya pesan untukmu ✨
           </p>
 
           <div class="mt-6 flex gap-3 justify-center">
             <button
               id="toggle-wishes"
-              class="px-4 py-2 border border-rose-300 rounded-lg"
+              class="hover:scale-105 transition px-4 py-2 border border-rose-300 rounded-lg"
             >
               Lihat Pesan
             </button>
@@ -120,17 +116,38 @@
             id="wishes"
             class="mt-3 hidden bg-rose-50 p-4 rounded-lg text-sm text-rose-800"
           >
-            <div
+            <p
               id="typed-1"
-              class="list-disc pl-5 space-y-1 flex flex-col items-center"
+              class="list-disc pl-5 space-y-1 flex flex-col items-center text-center"
             >
-              Semoga umurnya berkah ... (Aamiin)<br />
-              Semoga selalu sehat dan selalu dalam lindungan Allah ...
-              (Aamiin)<br />
-              Semoga selalu diberikan kemudahan dan kelancaran rezeki yang
-              melimpah ... (Aamiin)<br />
-              Semoga
-            </div>
+              Barakallah fii umrik KIKI!!:) Semoga umurnya berkah ... (Aamiin)
+              -- Semoga selalu sehat dan selalu dalam lindungan Allah ...
+              (Aamiin) -- Semoga selalu diberikan kemudahan dan kelancaran
+              rezeki yang melimpah ... (Aamiin) -- Semoga makin cantik, baik,
+              putih, bersih, dan sembuh kakinya ... (Aamiin) -- Semoga makin
+              mandiri dan sabar ... (Aamiin) -- Semoga program dietnya bisa
+              berjalan dengan lancar dan sukses ... (Aamiin) -- Semoga selalu
+              berbakti pada Ibu, membanggakannya, dan tidak pernah
+              mengecewakannya ... (Aamiin) -- Semoga selalu dimudahkan dan
+              dilancarkan jalan mu menuju kesuksesan ... (Aamiin) -- Semoga
+              tercapai semua apa yang dicita-citakan ... (Aamiin) -- Semoga bisa
+              segera menikah ... (Aamiin) -- Semoga kita berjodoh dan segera
+              menikah di waktu yang tepat ... (Aamiin yaa robbal alaamiin) +++
+              [Bersamaan dengan dingin-nya malam ini], aku sangat berterima
+              kasih kepada-Nya karena telah mempertemukanku dengan sosok wanita
+              yang luar biasa hebat ini. Kesetiaan yang tiada henti dia curahkan
+              padaku. Aku minta maaf belum bisa bertindak sebagai seorang lelaki
+              yang seharusnya. Sering aku merasa malu karena itu. Namun, harus
+              bagaimana lagi. Mungkin memang waktu belum berpihak pada keinginan
+              kita. Dengan harapan, doa, dan tekad kita untuk bisa bersama
+              menuju kebaikan, aku yakin waktu pasti akan datang menyatukan kita
+              bersama di bawah atap yang sama dan menjalin kasih. Untuk saat
+              ini, kesabaran dan keteguhan untuk menerjang badai godaan adalah
+              hal yang utama. Untuk itu, semangat untuk kita saling support dan
+              saling mengingatkan satu sama lain. "Maaf aku belum bisa menjadi
+              seperti yang kamu inginkan, tetapi setidaknya aku akan selalu
+              berusaha menjadi seperti apa yang kamu butuhkan."
+            </p>
             <div class="flex justify-center mt-8">
               <button
                 id="open-gift"
@@ -161,48 +178,55 @@
           ✕
         </button>
         <h2 class="text-2xl font-bold mb-2">Surprise! 🎉</h2>
-        <p class="text-gray-700">
-          Aku menuliskan beberapa alasan kenapa aku sayang padamu. Berikut
-          foto-foto yang sangat memorable untuk kita.
-        </p>
+        <div class="ml-auto flex gap-4 items-center my-4">
+          <p>Cek ini ki --></p>
+          <button
+            id="play-music-1"
+            class="px-4 py-2 bg-pink-500 text-white rounded-lg shadow hover:scale-105 transition"
+          >
+            Suara 1
+          </button>
+          <button
+            id="play-music-2"
+            class="px-4 py-2 bg-pink-500 text-white rounded-lg shadow hover:scale-105 transition"
+          >
+            Suara 2
+          </button>
+          <button
+            id="toggle-wishes-1"
+            class="px-4 py-2 border border-rose-300 rounded-lg hover:scale-105 transition"
+          >
+            Ada lagi nih
+          </button>
+        </div>
+        <div
+          id="wishes-1"
+          class="mt-3 hidden bg-rose-50 p-4 rounded-lg text-sm text-rose-800"
+        >
+          <p class="text-gray-700">
+            Berikut foto-foto yang sangat memorable untuk kita.
+          </p>
 
-        <!-- ganti bagian slideshow di dalam modal hadiah -->
-        <div class="mt-4">
-          <div id="slideshow" class="relative overflow-hidden rounded-lg">
-            <div
-              id="slides"
-              class="flex gap-8 overflow-x-auto px-2 py-2 scrollbar-hide scroll-smooth"
-            >
-              <!-- Foto akan dimuat otomatis lewat JavaScript -->
+          <!-- ganti bagian slideshow di dalam modal hadiah -->
+          <div class="mt-4">
+            <div id="slideshow" class="relative overflow-hidden rounded-lg">
+              <div
+                id="slides"
+                class="flex gap-8 overflow-x-auto px-2 py-2 scrollbar-hide scroll-smooth"
+              >
+                <!-- Foto akan dimuat otomatis lewat JavaScript -->
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="p-3 bg-rose-50 rounded-lg">
-            <h3 class="font-semibold">Kenapa aku sayang padamu</h3>
-            <ol class="list-decimal pl-5 mt-2 text-sm text-rose-800">
-              <li>Senang dan ramah kepada semua orang.</li>
-              <li>Tulus dan perhatian di hal-hal kecil.</li>
-              <li>Selalu jadi aku terbaik ketika bersamamu.</li>
-            </ol>
+          <div class="mt-4 text-right">
+            <button
+              id="close-modal-2"
+              class="px-4 py-2 bg-rose-500 text-white rounded hover:scale-105 transition"
+            >
+              Tutup
+            </button>
           </div>
-          <div class="p-3 bg-pink-50 rounded-lg">
-            <h3 class="font-semibold">Pesan khusus</h3>
-            <p class="text-sm text-gray-700 mt-2">
-              Semoga tahun ini membawa petualangan baru, keberanian, dan banyak
-              tawa. Aku akan selalu ada di sampingmu 💕
-            </p>
-          </div>
-        </div>
-
-        <div class="mt-4 text-right">
-          <button
-            id="close-modal-2"
-            class="px-4 py-2 bg-rose-500 text-white rounded"
-          >
-            Tutup
-          </button>
         </div>
       </div>
     </div>
@@ -213,6 +237,10 @@
       loop
       src="nadhif basalamah - penjaga hati (Official Lyric Video).mp3"
     ></audio>
+
+    <audio id="suara_1" src="Ucapan ibuku.m4a"></audio>
+
+    <audio id="suara_2" src="Ucapan huda.m4a"></audio>
 
     <script>
       // small helper: query
@@ -245,11 +273,15 @@
       // modal controls
       const giftModal = $("#gift-modal");
       $("#open-gift").addEventListener("click", () => showGift(true));
+      $("#toggle-wishes-1").addEventListener("click", () => showGift(true));
       //   $("#heart-btn").addEventListener("click", () => showGift(true));
       $("#close-modal").addEventListener("click", hideGift);
       $("#close-modal-2").addEventListener("click", hideGift);
       $("#toggle-wishes").addEventListener("click", () =>
         $("#wishes").classList.toggle("hidden")
+      );
+      $("#toggle-wishes-1").addEventListener("click", () =>
+        $("#wishes-1").classList.toggle("hidden")
       );
 
       function showGift(triggerConfetti = false) {
@@ -266,7 +298,7 @@
       // slideshow otomatis 47 foto
       (function slideshow() {
         const slidesEl = document.getElementById("slides");
-        const totalPhotos = 47; // jumlah foto
+        const totalPhotos = 64; // jumlah foto
         // tambahkan foto otomatis
         for (let i = 1; i <= totalPhotos; i++) {
           const img = document.createElement("img");
@@ -314,6 +346,82 @@
           music.pause();
           playBtn.textContent = "Putar Musik";
         }
+      });
+
+      // SUARA 1
+      const suara1 = document.getElementById("suara_1");
+      const playBtn1 = document.getElementById("play-music-1");
+      playBtn1.addEventListener("click", () => {
+        if (suara1.paused) {
+          suara1.play();
+          playBtn1.textContent = "Pause Suara";
+        } else {
+          suara1.pause();
+          playBtn1.textContent = "Putar Suara";
+        }
+      });
+
+      // SUARA 2
+      const suara2 = document.getElementById("suara_2");
+      const playBtn2 = document.getElementById("play-music-2");
+      playBtn2.addEventListener("click", () => {
+        if (suara2.paused) {
+          suara2.play();
+          playBtn2.textContent = "Pause Suara";
+        } else {
+          suara2.pause();
+          playBtn2.textContent = "Putar Suara";
+        }
+      });
+
+      // Fungsi bantu kecilkan dan mengembalikan volume musik
+      function fadeMusicVolume(targetVolume, duration = 500) {
+        const startVolume = music.volume;
+        const step = (targetVolume - startVolume) / (duration / 50);
+        let current = startVolume;
+        const interval = setInterval(() => {
+          current += step;
+          if (
+            (step < 0 && current <= targetVolume) ||
+            (step > 0 && current >= targetVolume)
+          ) {
+            current = targetVolume;
+            clearInterval(interval);
+          }
+          music.volume = Math.max(0, Math.min(1, current));
+        }, 50);
+      }
+
+      // Saat suara 1 mulai diputar -> kecilkan musik
+      suara1.addEventListener("play", () => {
+        fadeMusicVolume(0.0005); // kecilkan ke 20%
+      });
+      // Saat suara 1 berhenti -> kembalikan musik
+      suara1.addEventListener("pause", () => {
+        fadeMusicVolume(1); // kembalikan ke 100%
+      });
+      suara1.addEventListener("ended", () => {
+        fadeMusicVolume(1);
+      });
+
+      // Saat suara 2 mulai diputar -> kecilkan musik
+      suara2.addEventListener("play", () => {
+        fadeMusicVolume(0.0005);
+      });
+      // Saat suara 2 berhenti -> kembalikan musik
+      suara2.addEventListener("pause", () => {
+        fadeMusicVolume(1);
+      });
+      suara2.addEventListener("ended", () => {
+        fadeMusicVolume(1);
+      });
+
+      // Agar suara 1 dan suara 2 tidak dapat diputas bersamaan
+      suara1.addEventListener("play", () => {
+        if (!suara2.paused) suara2.pause();
+      });
+      suara2.addEventListener("play", () => {
+        if (!suara1.paused) suara1.pause();
       });
 
       // CONFETTI - simple canvas particle confetti
