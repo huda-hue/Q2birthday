@@ -71,21 +71,31 @@
       <header class="flex items-center gap-4">
         <div>
           <h1 id="hero-name" class="text-2xl sm:text-3xl font-extrabold mb-4">
-            Untukmu, Cantikku 💖
+            Untukmu, Cantikku 💖 -->
           </h1>
+          <p>*Musiknya jangan lupa dinyalakan biar berkesan ehehe... :)</p>
         </div>
         <div class="ml-auto">
           <button
             id="play-music"
-            class="px-4 py-2 bg-pink-500 text-white rounded-lg shadow"
+            class="px-4 py-2 bg-pink-500 text-white rounded-lg shadow hover:scale-105 transition"
           >
-            Putar Musik
+            Hidupkan Musik-nya Ki :)
           </button>
         </div>
       </header>
 
       <section class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <div class="flex flex-col items-center">
+        <div class="flex justify-center gap-4 items-center">
+          <p class="text-center">Udah siap? :)</p>
+          <button
+            id="toggle-wishes-0"
+            class="px-4 py-2 bg-pink-500 text-white rounded-lg shadow hover:scale-105 transition"
+          >
+            Mulai
+          </button>
+        </div>
+        <div id="wishes-0" class="flex flex-col items-center hidden">
           <div
             class="w-64 h-64 rounded-2xl bg-gradient-to-br from-pink-50 to-rose-50 flex items-center justify-center shadow-lg relative"
           >
@@ -97,7 +107,7 @@
             />
           </div>
         </div>
-        <div>
+        <div id="wishes-0-1" class="hidden">
           <p id="typed" class="text-lg sm:text-xl leading-relaxed">
             Happy Birthday -- Selamat Ulang Tahun ke-26, Sayang! 🎉🎉🎉 ....
             Klik "Lihat Pesan" - aku punya pesan untukmu ✨
@@ -120,7 +130,7 @@
               id="typed-1"
               class="list-disc pl-5 space-y-1 flex flex-col items-center text-center"
             >
-              Barakallah fii umrik KIKI!!:) Semoga umurnya berkah ... (Aamiin)
+              Barakallah fii umrik KIKI!! :) Semoga umurnya berkah ... (Aamiin)
               -- Semoga selalu sehat dan selalu dalam lindungan Allah ...
               (Aamiin) -- Semoga selalu diberikan kemudahan dan kelancaran
               rezeki yang melimpah ... (Aamiin) -- Semoga makin cantik, baik,
@@ -174,9 +184,10 @@
       <div
         class="bg-white rounded-2xl p-6 max-w-2xl w-full mx-4 shadow-2xl relative"
       >
-        <button id="close-modal" class="absolute right-4 top-4 text-gray-500">
-          ✕
-        </button>
+        <button
+          id="close-modal"
+          class="absolute right-4 top-4 text-gray-500"
+        ></button>
         <h2 class="text-2xl font-bold mb-2">Surprise! 🎉</h2>
         <div class="ml-auto flex gap-4 items-center my-4">
           <p>Cek ini ki --></p>
@@ -246,29 +257,43 @@
       // small helper: query
       const $ = (q) => document.querySelector(q);
 
-      // Typewriter effect
-      (function typeWriter() {
-        const el = document.getElementById("typed");
-        const full = el.textContent.trim();
+      // Typewriter reusable function
+      function typeWriter(elId, speed = 50) {
+        const el = document.getElementById(elId);
+        const full = el.getAttribute("data-full") || el.textContent.trim();
+        el.setAttribute("data-full", full); // simpan teks asli
         el.textContent = "";
         let i = 0;
+
         const id = setInterval(() => {
           el.textContent += full[i++] || "";
           if (i >= full.length) clearInterval(id);
-        }, 50);
-      })();
+        }, speed);
+      }
 
-      // Typewriter effect
-      (function typeWriter1() {
-        const ul = document.getElementById("typed-1");
-        const full = ul.textContent.trim();
-        ul.textContent = "";
-        let i = 0;
-        const id = setInterval(() => {
-          ul.textContent += full[i++] || "";
-          if (i >= full.length) clearInterval(id);
-        }, 50);
-      })();
+      // // Typewriter effect
+      // (function typeWriter() {
+      //   const el = document.getElementById("typed");
+      //   const full = el.textContent.trim();
+      //   el.textContent = "";
+      //   let i = 0;
+      //   const id = setInterval(() => {
+      //     el.textContent += full[i++] || "";
+      //     if (i >= full.length) clearInterval(id);
+      //   }, 50);
+      // })();
+
+      // // Typewriter effect
+      // (function typeWriter1() {
+      //   const ul = document.getElementById("typed-1");
+      //   const full = ul.textContent.trim();
+      //   ul.textContent = "";
+      //   let i = 0;
+      //   const id = setInterval(() => {
+      //     ul.textContent += full[i++] || "";
+      //     if (i >= full.length) clearInterval(id);
+      //   }, 50);
+      // })();
 
       // modal controls
       const giftModal = $("#gift-modal");
@@ -277,12 +302,44 @@
       //   $("#heart-btn").addEventListener("click", () => showGift(true));
       $("#close-modal").addEventListener("click", hideGift);
       $("#close-modal-2").addEventListener("click", hideGift);
-      $("#toggle-wishes").addEventListener("click", () =>
-        $("#wishes").classList.toggle("hidden")
-      );
+      // $("#toggle-wishes-0").addEventListener("click", () =>
+      //   $("#wishes-0").classList.toggle("hidden")
+      // );
+      // $("#toggle-wishes-0").addEventListener("click", () =>
+      //   $("#wishes-0-1").classList.toggle("hidden")
+      // );
+      // $("#toggle-wishes").addEventListener("click", () =>
+      //   $("#wishes").classList.toggle("hidden")
+      // );
       $("#toggle-wishes-1").addEventListener("click", () =>
         $("#wishes-1").classList.toggle("hidden")
       );
+
+      let typed0Played = false;
+      let typed1Played = false;
+
+      // tombol "Mulai"
+      $("#toggle-wishes-0").addEventListener("click", () => {
+        $("#wishes-0").classList.toggle("hidden");
+        $("#wishes-0-1").classList.toggle("hidden");
+
+        // Jalankan efek mengetik pertama kali muncul
+        if (!$("#wishes-0-1").classList.contains("hidden") && !typed0Played) {
+          typeWriter("typed", 40);
+          typed0Played = true;
+        }
+      });
+
+      // tombol "Lihat Pesan"
+      $("#toggle-wishes").addEventListener("click", () => {
+        $("#wishes").classList.toggle("hidden");
+
+        // Jalankan efek mengetik hanya sekali
+        if (!$("#wishes").classList.contains("hidden") && !typed1Played) {
+          typeWriter("typed-1", 30);
+          typed1Played = true;
+        }
+      });
 
       function showGift(triggerConfetti = false) {
         giftModal.classList.remove("hidden");
